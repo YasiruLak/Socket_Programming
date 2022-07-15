@@ -11,7 +11,6 @@ import java.net.Socket;
  * @since : 0.1.0
  **/
 public class ServerSide {
-
     public static void main(String[] args) throws IOException {
         final int PORT = 8000;
         ServerSocket serverSocket = new ServerSocket(PORT);
