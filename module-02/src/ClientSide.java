@@ -1,5 +1,5 @@
 import java.io.IOException;
-import java.net.ServerSocket;
+import java.io.PrintWriter;
 import java.net.Socket;
 
 /**
@@ -17,5 +17,11 @@ public class ClientSide {
         Socket socket = new Socket("localhost", PORT);
 
 
+        PrintWriter printWriter = new PrintWriter(
+                socket.getOutputStream()
+        );
+
+        printWriter.println("Hello Server!");
+        printWriter.flush();
     }
 }
