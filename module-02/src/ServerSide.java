@@ -1,4 +1,6 @@
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -17,5 +19,13 @@ public class ServerSide {
         System.out.println("Server is up and running on port : "+PORT);
         Socket socket = serverSocket.accept();
         System.out.println(socket.getPort());
+
+        InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
+
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        String clientData = bufferedReader.readLine();
+
+        System.out.println("Client says, "+clientData);
     }
 }
